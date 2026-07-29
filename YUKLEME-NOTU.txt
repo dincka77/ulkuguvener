@@ -1,11 +1,34 @@
-Bu ZIP'in içindeki dosyaları GitHub deposunun ANA DİZİNİNE yükleyin.
+import json
+import os
+from datetime import datetime, timezone
+from pathlib import Path
+from urllib.parse import urlencode
+from urllib.request import urlopen
 
-Ana dizinde doğrudan şunlar görünmelidir:
-- index.html
-- CNAME
-- assets/
-- scripts/
-- .github/
+TOKEN = os.environ.get("INSTAGRAM_ACCESS_TOKEN", "").strip()
+if not TOKEN:
+    raise SystemExit("INSTAGRAM_ACCESS_TOKEN secret is missing")
 
-ZIP'in kendisini veya "ulkuguvener-corrected-root" adlı klasörü tek parça halinde yüklemeyin.
-Mevcut index.html dosyasının üzerine yazıldığından emin olun.
+fields = "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp"
+query = urlencode({"fields": fields, "limit": 12, "access_token": TOKEN})
+url = f"https://graph.instagram.com/me/media?{query}"
+
+with urlopen(url, timeout=30) as response:
+    payload = json.load(response)
+
+posts = []
+for item in payload.get("data", []):
+    if not item.get("permalink"):
+        continue
+    posts.append({key: item.get(key) for key in (
+        "id", "caption", "media_type", "media_url", "thumbnail_url", "permalink", "timestamp"
+    )})
+
+output = {
+    "updated_at": datetime.now(timezone.utc).isoformat(),
+    "posts": posts[:6],
+}
+Path("assets/instagram-feed.json").write_text(
+    json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8"
+)
+print(f"Updated Instagram feed with {len(output['posts'])} posts")
