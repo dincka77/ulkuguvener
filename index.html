@@ -525,6 +525,7 @@
   .video-title{font-size:0.98rem; font-weight:600; color:var(--ink); margin-bottom:4px;}
   .video-sub{font-size:0.84rem; color:var(--ink-soft);}
   @media (max-width:940px){.video-grid{grid-template-columns:1fr;}}
+  .yt-subscribe{display:flex; justify-content:center; margin-top:36px;}
 
   /* ===== INSTAGRAM CALLOUT ===== */
   .insta-box{
@@ -551,51 +552,6 @@
   .ig-photo{width:100%; height:340px; object-fit:cover; object-position:center 20%; border-radius:12px; display:block;}
   @media (max-width:820px){.insta-box{grid-template-columns:1fr;} .insta-copy{order:2; text-align:center;} .insta-copy p{margin-left:auto; margin-right:auto;} .ig-frame{order:1;}}
 
-  /* ===== YOUTUBE CALLOUT ===== */
-  .yt-box{
-    display:grid; grid-template-columns:1.05fr 1fr; align-items:center; gap:40px;
-    background:linear-gradient(120deg, #EFE4D3, #E9DCC6);
-    border:1px solid rgba(139,94,60,0.25);
-    border-radius:var(--radius);
-    padding:38px; margin-top:26px;
-  }
-  .yt-copy h3{font-size:1.3rem; margin-bottom:10px; font-weight:600;}
-  .yt-copy p{font-size:0.96rem; color:var(--ink-soft); max-width:40ch; margin-bottom:24px;}
-  .yt-handle{
-    display:inline-flex; align-items:center; gap:8px;
-    font-size:0.84rem; color:var(--wood); font-weight:700;
-    margin-bottom:16px;
-  }
-  .yt-frame{
-    background:var(--cream); border-radius:20px; border:1px solid var(--line);
-    box-shadow:var(--shadow); padding:14px; max-width:360px; margin:0 auto;
-    transform:rotate(-1.2deg);
-  }
-  .yt-thumb{
-    aspect-ratio:16/9; border-radius:12px; margin-bottom:10px;
-    background-image:linear-gradient(180deg, rgba(46,38,32,0.15), rgba(46,38,32,0.55)), url('assets/ayse-ulku-guvener.jpg');
-    background-size:cover; background-position:center 15%;
-    display:flex; align-items:center; justify-content:center;
-    position:relative;
-  }
-  .yt-thumb .duration{
-    position:absolute; bottom:8px; right:8px;
-    background:rgba(33,26,19,0.75); color:var(--cream); font-size:0.68rem; font-weight:600;
-    padding:2px 6px; border-radius:5px;
-  }
-  .yt-thumb .play-btn{
-    width:52px; height:52px; border-radius:50%; background:rgba(251,248,242,0.92);
-    display:flex; align-items:center; justify-content:center;
-  }
-  .yt-row{display:flex; align-items:center; gap:10px; padding:2px 4px;}
-  .yt-row .yt-avatar{
-    width:30px; height:30px; border-radius:50%; flex-shrink:0;
-    background-image:url('assets/ayse-ulku-guvener.jpg');
-    background-size:cover; background-position:center 20%;
-  }
-  .yt-row .yt-title{font-size:0.82rem; font-weight:700; color:var(--ink);}
-  .yt-row .yt-sub{font-size:0.7rem; color:var(--ink-soft);}
-  @media (max-width:820px){.yt-box{grid-template-columns:1fr;} .yt-copy{order:2; text-align:center;} .yt-copy p{margin-left:auto; margin-right:auto;} .yt-frame{order:1;}}
 
   /* ===== MARQUEE ===== */
   .marquee-band{background:#211A13; padding:22px 0; overflow:hidden; border-top:1px solid rgba(251,248,242,0.12); border-bottom:1px solid rgba(251,248,242,0.12);}
@@ -891,31 +847,9 @@
           <a href="https://instagram.com/psikologulkuguvener" target="_blank" rel="noopener" class="btn btn-primary">@psikologulkuguvener'ı Takip Et</a>
         </div>
         <div class="ig-frame" aria-hidden="true">
-          <img src="assets/ayse-ulku-guvener.jpg" alt="Ayşe Ülkü Güvener" class="ig-photo">
+          <img src="assets/instagram-avatar.jpg" alt="Ayşe Ülkü Güvener" class="ig-photo">
         </div>
       </div>
-      <div class="yt-box">
-        <div class="yt-frame" aria-hidden="true">
-          <div class="yt-thumb">
-            <div class="play-btn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7-11-7Z" fill="#A8543D"/></svg>
-            </div>
-            <span class="duration">12:04</span>
-          </div>
-          <div class="yt-row">
-            <div class="yt-avatar"></div>
-            <div><div class="yt-title">Psikolog Ayşe Ülkü Güvener</div><div class="yt-sub">YouTube kanalı</div></div>
-          </div>
-        </div>
-        <div class="yt-copy">
-          <span class="yt-handle">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5" width="19" height="14" rx="4" stroke="#8B5E3C" stroke-width="1.7"/><path d="M10.5 9.5v5l4.3-2.5-4.3-2.5Z" fill="#8B5E3C"/></svg>
-            Psikolog Ayşe Ülkü Güvener
-          </span>
-          <h3>YouTube'da da buluşalım</h3>
-          <p>İleride video içerikler ve söyleşilerle YouTube kanalımda da paylaşımlar yapmayı planlıyorum — kanalı şimdiden takibe alabilirsiniz.</p>
-          <a href="https://www.youtube.com/@psikologayseulkuguvener" target="_blank" rel="noopener" class="btn btn-ghost">YouTube Kanalına Git</a>
-        </div>
       </div>
     </div>
   </section>
@@ -968,6 +902,12 @@
             <div class="video-sub">İlişkinizde algınızla oynayıp sizi kandırıyor olabilir</div>
           </div>
         </div>
+      </div>
+      <div class="yt-subscribe">
+        <a href="https://www.youtube.com/@psikologayseulkuguvener?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5" width="19" height="14" rx="4" stroke="#FBF8F2" stroke-width="1.7"/><path d="M10.5 9.5v5l4.3-2.5-4.3-2.5Z" fill="#FBF8F2"/></svg>
+          Kanalıma Abone Ol
+        </a>
       </div>
     </div>
   </section>
