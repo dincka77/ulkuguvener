@@ -1,0 +1,11 @@
+Bu ZIP'in içindeki dosyaları GitHub deposunun ANA DİZİNİNE yükleyin.
+
+Ana dizinde doğrudan şunlar görünmelidir:
+- index.html
+- CNAME
+- assets/
+- scripts/
+- .github/
+
+ZIP'in kendisini veya "ulkuguvener-corrected-root" adlı klasörü tek parça halinde yüklemeyin.
+Mevcut index.html dosyasının üzerine yazıldığından emin olun.
